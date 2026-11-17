@@ -98,7 +98,16 @@ AI가 만든 콘텐츠는 내부 API로 전달하고, 메인 서버가 최종 �
 **[최종 발표 자료 보기 (PDF · 약 36MB)](https://github.com/KB7-25-2/.github/blob/main/profile/docs/firstfolio-presentation.pdf)**
 
 
-<!-- 팀원과 GitHub 계정, 역할은 확인 후 추가합니다. 배포 URL·시연 영상·프로젝트 기간도 실제 정보로 보완합니다. -->
+## 팀원 소개
+
+| 이름 | GitHub | 담당 역할 | 주요 기여 |
+| :---: | :---: | --- | --- |
+| 김민철 | [@Armont52](https://github.com/Armont52) | Backend | 팀장(PM), 백엔드 전반 구현(학습, 일일퀘스트, 포인트 상점) |
+| 강송주 | [@sjk911](https://github.com/sjk911) | Frontend | 포트폴리오 대시보드,기프티콘 마켓, 반응형 UX |
+| 고현석 | [@kohyunseok518](https://github.com/kohyunseok518) | AI | AI 서버 설계·개발,  금융 문서 RAG 구축 |
+| 김충훈 | [@kchun0513](https://github.com/kchun0513) | Frontend | 프론트 개발 총괄,  CI/CD, 형상관리 |
+| 신서영 | [@pyqvv](https://github.com/pyqvv) | Backend | 투자(예적금, 채권, 주식, 펀드) 시뮬레이션 기획 및 구현 |
+
 
 ---
 <br>
