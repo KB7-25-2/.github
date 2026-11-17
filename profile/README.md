@@ -2,9 +2,9 @@
 
 ![firstfolio표지](https://raw.githubusercontent.com/KB7-25-2/.github/main/profile/img/cover.png)
 <br><br>
-<img src="https://raw.githubusercontent.com/KB7-25-2/.github/main/profile/img/logo.svg" width="64" alt="firstfolio 앱 아이콘">
+<img src="https://raw.githubusercontent.com/KB7-25-2/.github/main/profile/img/logo.svg" width="256" alt="firstfolio 앱 아이콘">
 
-**금융을 배우고, 나만의 포트폴리오로 경험하세요.**
+**배우며 완성하는 나의 첫 자산 포트폴리오**
 
 ![Vue](https://img.shields.io/badge/Vue_3-4FC08D?style=flat-square&logo=vuedotjs&logoColor=white)
 ![Spring](https://img.shields.io/badge/Spring_MVC-6DB33F?style=flat-square&logo=spring&logoColor=white)
@@ -38,7 +38,7 @@
 | <img src="https://raw.githubusercontent.com/KB7-25-2/.github/main/profile/img/screen-lesson.png" width="230" alt="금리의 핵심 개념을 읽는 소단원 강좌 화면"> | <img src="https://raw.githubusercontent.com/KB7-25-2/.github/main/profile/img/screen-daily.png" width="230" alt="일일 퀘스트와 금융 뉴스 스크랩 화면"> | <img src="https://raw.githubusercontent.com/KB7-25-2/.github/main/profile/img/screen-market.png" width="230" alt="학습 포인트로 기프티콘을 교환하는 상점 화면"> |
 | 금융 개념을 익히고<br>퀴즈로 이해도를 확인 | 매일 다섯 문제와 금융 뉴스로<br>지속적 학습 | 학습하며 모은 포인트를<br>혜택으로 교환 |
 
-## 💡 학습이 경험으로 이어지는 방식
+## 학습이 경험으로 이어지는 방식
 
 | 단계 | 경험 |
 | --- | --- |
@@ -50,24 +50,17 @@
 
 **포인트와 모의투자금은 별개입니다.** 포인트는 기프티콘 교환에, 모의투자금은 가상 자산 구성에 사용하며 서로 전환하지 않습니다.
 
-## ⛓️ 시스템 구조
+## 시스템 구조
 
 사용자 상태와 자산 계산은 **Spring 메인 서버**, 금융 문서 검색과 콘텐츠 생성은 **AI 서비스**가 담당합니다.<br>
 AI가 만든 콘텐츠는 내부 API로 전달하고, 메인 서버가 최종 저장과 게시를 담당합니다.
 
-```mermaid
-flowchart TD
-    User[사용자] --> FE[Vue 3 · Vercel]
-    FE -->|REST API| BE[Spring MVC · Tomcat · EC2]
-    BE -->|MyBatis · HikariCP| DB[(MySQL)]
-    BE --> S3[AWS S3 · 버전형 학습 JSON]
-    AI[FastAPI · AI 서비스] <-->|내부 API| BE
-    Docs[금융 교육 문서 · 뉴스] --> Search[Kiwi · BM25 · FAISS 검색]
-    Search --> AI
-    AI --> LLM[OpenAI · 콘텐츠 생성 및 검증]
-    Actions[GitHub Actions] --> Hub[DockerHub]
-    Hub --> BE
-```
+[![firstfolio 운영 시스템 아키텍처 — Vercel, Firebase Auth, AWS VPC, ALB, 메인·AI 서버, RabbitMQ, 알림 워커, RDS, S3 및 SES](https://raw.githubusercontent.com/KB7-25-2/.github/main/profile/img/system-architecture.png)](https://raw.githubusercontent.com/KB7-25-2/.github/main/profile/img/system-architecture.png)
+
+- **접근과 인증**: Vercel의 Vue 프론트엔드와 Firebase Authentication을 사용합니다.
+- **네트워크와 서버**: Public Subnet의 ALB를 통해 Private Application Subnet의 메인 서버에 접근하며, 외부 API 호출에는 NAT Gateway를 사용합니다.
+- **비동기 알림**: RabbitMQ와 별도 Notification Worker를 통해 알림 작업을 처리하고 SES로 이메일을 발송합니다.
+- **데이터와 콘텐츠**: Private DB Subnet의 RDS MySQL에 메인·AI 데이터를 구분해 저장하고 S3에 콘텐츠를 보관합니다.
 
 <details>
 <summary><b>데이터와 이력을 관리하는 원칙</b></summary>
@@ -80,7 +73,7 @@ flowchart TD
 
 </details>
 
-## 📂 저장소
+## 저장소
 
 | 저장소 | 역할 |
 | --- | --- |
@@ -88,7 +81,7 @@ flowchart TD
 | [**FirstFolio-BE**](https://github.com/KB7-25-2/FirstFolio-BE) | 인증·인가, 커리큘럼, 학습·퀴즈, 포인트, 모의 자산 관리 |
 | [**FirstFolio-AI**](https://github.com/KB7-25-2/FirstFolio-AI) | 금융 문서 검색, RAG 기반 퀴즈·금융 콘텐츠 생성과 검증 |
 
-## 🛠️ 기술 스택
+## 기술 스택
 
 | 영역 | 기술 |
 | --- | --- |
@@ -102,14 +95,13 @@ flowchart TD
 
 
 ## 발표 자료
-**[📄 최종 발표 자료 보기 (PDF · 약 36MB)](https://github.com/KB7-25-2/.github/blob/main/profile/docs/firstfolio-presentation.pdf)**
+**[최종 발표 자료 보기 (PDF · 약 36MB)](https://github.com/KB7-25-2/.github/blob/main/profile/docs/firstfolio-presentation.pdf)**
 
-표지를 클릭하면 전체 발표 자료를 확인할 수 있습니다.
 
 <!-- 팀원과 GitHub 계정, 역할은 확인 후 추가합니다. 배포 URL·시연 영상·프로젝트 기간도 실제 정보로 보완합니다. -->
 
 ---
-
+<br>
 <div align="center">
 
 **firstfolio — 배우며 완성하는 나의 첫 자산 포트폴리오**
