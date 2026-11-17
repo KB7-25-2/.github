@@ -1,4 +1,6 @@
 <div align="center">
+
+![firstfolio표지](https://raw.githubusercontent.com/KB7-25-2/.github/main/profile/img/cover.png)
 <br><br>
 <img src="https://raw.githubusercontent.com/KB7-25-2/.github/main/profile/img/logo.svg" width="64" alt="firstfolio 앱 아이콘">
 
@@ -97,6 +99,12 @@ flowchart TD
 | Content | AWS S3 · 버전형 JSON |
 | 배포 | Vercel · GitHub Actions · Docker · DockerHub · AWS EC2 |
 | 관측 | Micrometer · Prometheus · Grafana |
+
+
+## 발표 자료
+**[📄 최종 발표 자료 보기 (PDF · 약 36MB)](https://github.com/KB7-25-2/.github/blob/main/profile/docs/firstfolio-presentation.pdf)**
+
+표지를 클릭하면 전체 발표 자료를 확인할 수 있습니다.
 
 <!-- 팀원과 GitHub 계정, 역할은 확인 후 추가합니다. 배포 URL·시연 영상·프로젝트 기간도 실제 정보로 보완합니다. -->
 
